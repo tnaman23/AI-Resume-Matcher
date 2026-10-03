@@ -349,3 +349,8 @@ def health():
         "status": "healthy",
         "backend": "running"
     }
+@app.get("/test")
+def test():
+    return {
+        "message": "AI Resume Matcher backend is working on Render"
+    }
