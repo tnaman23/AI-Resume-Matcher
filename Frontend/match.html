@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Match Resume - AI Resume Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="match-page">
+
+
+        <!-- HEADER -->
+
+        <header class="match-header">
+
+            <button class="back-button" onclick="goHome()">
+                ← Back
+            </button>
+
+            <div>
+
+                <h1>
+                    Match My Resume
+                </h1>
+
+                <p>
+                    Compare your resume with a job description
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-container">
+
+            <div class="progress-step active">
+                <span>1</span>
+                <p>Upload Resume</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>2</span>
+                <p>Job Description</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>3</span>
+                <p>Analyze</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>4</span>
+                <p>Results</p>
+            </div>
+
+        </div>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="match-container">
+
+
+            <!-- RESUME UPLOAD CARD -->
+
+            <section class="match-card">
+
+                <div class="card-icon">
+                    📄
+                </div>
+
+                <h2>
+                    Upload Your Resume
+                </h2>
+
+                <p class="card-description">
+                    Upload your current resume in PDF format.
+                </p>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">
+                        📤
+                    </div>
+
+                    <h3>
+                        Choose your resume
+                    </h3>
+
+                    <p>
+                        PDF files only
+                    </p>
+
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        accept=".pdf"
+                    >
+
+                    <label
+                        for="resumeFile"
+                        class="upload-button"
+                    >
+                        Choose PDF
+                    </label>
+
+                    <p
+                        id="resumeFileName"
+                        class="file-name"
+                    >
+                        No file selected
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="main-button"
+                    id="uploadButton"
+                    onclick="uploadResume()"
+                >
+                    Upload Resume
+                </button>
+
+
+                <div
+                    id="uploadStatus"
+                    class="status-message"
+                ></div>
+
+            </section>
+
+
+
+            <!-- JOB DESCRIPTION CARD -->
+
+            <section class="match-card">
+
+                <div class="card-icon">
+                    💼
+                </div>
+
+                <h2>
+                    Job Description
+                </h2>
+
+                <p class="card-description">
+                    Paste the job description you want to match your resume against.
+                </p>
+
+
+                <textarea
+                    id="jobDescription"
+                    class="job-textarea"
+                    placeholder="Paste the complete job description here...
+
+Example:
+
+We are looking for a Python Developer with experience in FastAPI, SQL, Git, REST API and Machine Learning."
+                ></textarea>
+
+
+                <div class="job-options">
+
+                    <span>
+                        Or upload a job description PDF
+                    </span>
+
+                    <input
+                        type="file"
+                        id="jobFile"
+                        accept=".pdf"
+                        onchange="uploadJobPDF()"
+                    >
+
+                    <label
+                        for="jobFile"
+                        class="secondary-upload-button"
+                    >
+                        Upload Job PDF
+                    </label>
+
+                    <p
+                        id="jobFileName"
+                        class="file-name"
+                    >
+                        No file selected
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="analyze-button"
+                    onclick="analyzeResume()"
+                >
+                    Analyze Resume
+                    <span>→</span>
+                </button>
+
+
+                <div
+                    id="analyzeStatus"
+                    class="status-message"
+                ></div>
+
+            </section>
+
+
+
+            <!-- RESULTS -->
+
+            <section
+                class="results-section"
+                id="resultsSection"
+            >
+
+                <h2>
+                    Resume Match Results
+                </h2>
+
+                <p>
+                    Here is how your resume matches the job description.
+                </p>
+
+
+                <!-- MATCH SCORE -->
+
+                <div class="score-card">
+
+                    <div
+                        class="score-circle"
+                        id="scoreCircle"
+                    >
+
+                        <span id="matchPercentage">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Resume Match Score
+                        </h3>
+
+                        <p>
+                            Based on the skills found in your resume and job description.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MATCHED SKILLS -->
+
+                <div class="skills-result-card">
+
+                    <h3>
+                        ✅ Matched Skills
+                    </h3>
+
+                    <div
+                        id="matchedSkills"
+                        class="skills-container"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- MISSING SKILLS -->
+
+                <div class="skills-result-card">
+
+                    <h3>
+                        ⚠️ Missing Skills
+                    </h3>
+
+                    <p>
+                        These skills were found in the job description but not detected in your uploaded resume.
+                    </p>
+
+                    <div
+                        id="missingSkills"
+                        class="skills-container"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- SKILL VERIFICATION -->
+
+                <div
+                    class="verification-card"
+                    id="verificationSection"
+                >
+
+                    <h2>
+                        Do you have these skills?
+                    </h2>
+
+                    <p>
+                        If you have a skill but it is not mentioned in your resume,
+                        you can provide details about where you used it.
+                    </p>
+
+                    <div id="skillQuestions"></div>
+
+                </div>
+
+
+
+                <!-- UPDATE RESUME -->
+
+                <div
+                    class="update-resume-card"
+                    id="updateResumeSection"
+                >
+
+                    <h2>
+                        Update Your Resume
+                    </h2>
+
+                    <p>
+                        Add verified skills to your resume and continue to the resume editor.
+                    </p>
+
+                    <button
+                        class="main-button"
+                        onclick="continueToResumeEditor()"
+                    >
+                        Continue to Resume Editor →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                AI Resume Assistant
+            </p>
+
+            <p>
+                Build smarter. Match better.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

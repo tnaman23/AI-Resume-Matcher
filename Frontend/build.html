@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Build Resume - AI Resume Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="builder-page">
+
+
+    <!-- HEADER -->
+
+    <header class="builder-header">
+
+        <button
+            class="back-button"
+            onclick="goHome()"
+        >
+            ← Home
+        </button>
+
+        <div>
+
+            <h1>
+                Build My Resume
+            </h1>
+
+            <p>
+                Create your professional resume step by step.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="builder-progress">
+
+        <div
+            class="builder-progress-step active"
+            id="progress1"
+        >
+            <span>1</span>
+            <p>Personal</p>
+        </div>
+
+        <div class="builder-progress-line"></div>
+
+        <div
+            class="builder-progress-step"
+            id="progress2"
+        >
+            <span>2</span>
+            <p>Education</p>
+        </div>
+
+        <div class="builder-progress-line"></div>
+
+        <div
+            class="builder-progress-step"
+            id="progress3"
+        >
+            <span>3</span>
+            <p>Skills</p>
+        </div>
+
+        <div class="builder-progress-line"></div>
+
+        <div
+            class="builder-progress-step"
+            id="progress4"
+        >
+            <span>4</span>
+            <p>Projects</p>
+        </div>
+
+        <div class="builder-progress-line"></div>
+
+        <div
+            class="builder-progress-step"
+            id="progress5"
+        >
+            <span>5</span>
+            <p>Experience</p>
+        </div>
+
+        <div class="builder-progress-line"></div>
+
+        <div
+            class="builder-progress-step"
+            id="progress6"
+        >
+            <span>6</span>
+            <p>Preview</p>
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN -->
+
+    <main class="step-builder-container">
+
+
+        <!-- ======================================
+             STEP 1
+        ======================================= -->
+
+        <section
+            class="builder-step active-step"
+            id="step1"
+        >
+
+            <div class="step-card">
+
+                <div class="step-icon">
+                    👤
+                </div>
+
+                <h2>
+                    Personal Information
+                </h2>
+
+                <p class="step-description">
+                    Let's start with your basic information.
+                </p>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="builderName"
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="builderEmail"
+                            placeholder="example@gmail.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="builderPhone"
+                            placeholder="+91 9876543210"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="builderLocation"
+                            placeholder="Chandigarh, India"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            LinkedIn
+                        </label>
+
+                        <input
+                            type="text"
+                            id="builderLinkedin"
+                            placeholder="linkedin.com/in/username"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            GitHub
+                        </label>
+
+                        <input
+                            type="text"
+                            id="builderGithub"
+                            placeholder="github.com/username"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Portfolio
+                        </label>
+
+                        <input
+                            type="text"
+                            id="builderPortfolio"
+                            placeholder="yourportfolio.com"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="next-button"
+                        onclick="nextStep(1)"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STEP 2 EDUCATION
+        ======================================= -->
+
+        <section
+            class="builder-step"
+            id="step2"
+        >
+
+            <div class="step-card">
+
+                <div class="step-icon">
+                    🎓
+                </div>
+
+                <h2>
+                    Education
+                </h2>
+
+                <p class="step-description">
+                    Add your educational qualifications.
+                </p>
+
+
+                <!-- 10TH -->
+
+                <div class="education-section">
+
+                    <h3>
+                        Class 10th
+                    </h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                School Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class10School"
+                                placeholder="School name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Board
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class10Board"
+                                placeholder="CBSE / ICSE / State Board"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Passing Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class10Year"
+                                placeholder="2023"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Percentage / CGPA
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class10Score"
+                                placeholder="85%"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 12TH -->
+
+                <div class="education-section">
+
+                    <h3>
+                        Class 12th
+                    </h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                School Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class12School"
+                                placeholder="School name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Board
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class12Board"
+                                placeholder="CBSE / ICSE / State Board"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Passing Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class12Year"
+                                placeholder="2025"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Percentage / CGPA
+                            </label>
+
+                            <input
+                                type="text"
+                                id="class12Score"
+                                placeholder="80%"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BACHELOR -->
+
+                <div class="education-section">
+
+                    <div class="education-title-row">
+
+                        <h3>
+                            Bachelor's Degree
+                        </h3>
+
+                        <span class="required-badge">
+                            Recommended
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Degree
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bachelorDegree"
+                                placeholder="B.Tech Computer Science"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                University / College
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bachelorCollege"
+                                placeholder="University name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Start Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bachelorStart"
+                                placeholder="2025"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                End Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bachelorEnd"
+                                placeholder="2029"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                CGPA / Percentage
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bachelorScore"
+                                placeholder="8.5 CGPA"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MASTER -->
+
+                <div
+                    class="education-section optional-section"
+                    id="masterSection"
+                >
+
+                    <div class="education-title-row">
+
+                        <h3>
+                            Master's Degree
+                        </h3>
+
+                        <button
+                            type="button"
+                            class="remove-section-button"
+                            onclick="skipEducation('master')"
+                        >
+                            Skip
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Degree
+                            </label>
+
+                            <input
+                                type="text"
+                                id="masterDegree"
+                                placeholder="M.Tech / MBA / MSc"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                University / College
+                            </label>
+
+                            <input
+                                type="text"
+                                id="masterCollege"
+                                placeholder="University name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Start Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="masterStart"
+                                placeholder="2029"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                End Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="masterEnd"
+                                placeholder="2031"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                CGPA / Percentage
+                            </label>
+
+                            <input
+                                type="text"
+                                id="masterScore"
+                                placeholder="8.5 CGPA"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHD -->
+
+                <div
+                    class="education-section optional-section"
+                    id="phdSection"
+                >
+
+                    <div class="education-title-row">
+
+                        <h3>
+                            PhD
+                        </h3>
+
+                        <button
+                            type="button"
+                            class="remove-section-button"
+                            onclick="skipEducation('phd')"
+                        >
+                            Skip
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Research / PhD Field
+                            </label>
+
+                            <input
+                                type="text"
+                                id="phdField"
+                                placeholder="Artificial Intelligence"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                University
+                            </label>
+
+                            <input
+                                type="text"
+                                id="phdCollege"
+                                placeholder="University name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Start Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="phdStart"
+                                placeholder="2031"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                End Year
+                            </label>
+
+                            <input
+                                type="text"
+                                id="phdEnd"
+                                placeholder="2035"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="back-step-button"
+                        onclick="previousStep(2)"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="next-button"
+                        onclick="nextStep(2)"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STEP 3 SKILLS
+        ======================================= -->
+
+        <section
+            class="builder-step"
+            id="step3"
+        >
+
+            <div class="step-card">
+
+                <div class="step-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Skills & Achievements
+                </h2>
+
+                <p class="step-description">
+                    Tell us about your skills and achievements.
+                </p>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Technical Skills
+                    </label>
+
+                    <textarea
+                        id="builderSkills"
+                        rows="5"
+                        placeholder="Python, C++, Java, JavaScript, HTML, CSS, SQL, Machine Learning..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Achievements
+                    </label>
+
+                    <textarea
+                        id="builderAchievements"
+                        rows="5"
+                        placeholder="Hackathons, competitions, leadership, academic achievements..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Certifications
+                    </label>
+
+                    <textarea
+                        id="builderCertifications"
+                        rows="5"
+                        placeholder="Python Certificate - IBM
+SQL Certificate
+Machine Learning Certificate..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="optional-note">
+                    You can skip this section if you don't have
+                    achievements or certifications yet.
+                </div>
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="back-step-button"
+                        onclick="previousStep(3)"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="skip-button"
+                        onclick="skipStep(3)"
+                    >
+                        Skip
+                    </button>
+
+                    <button
+                        class="next-button"
+                        onclick="nextStep(3)"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STEP 4 PROJECTS
+        ======================================= -->
+
+        <section
+            class="builder-step"
+            id="step4"
+        >
+
+            <div class="step-card">
+
+                <div class="step-icon">
+                    🚀
+                </div>
+
+                <h2>
+                    Projects
+                </h2>
+
+                <p class="step-description">
+                    Add projects that demonstrate your skills.
+                </p>
+
+
+                <div id="projectBuilderContainer">
+
+
+                    <div class="project-builder-item">
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="builder-project-name"
+                                placeholder="AI Resume Matcher"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Technologies Used
+                            </label>
+
+                            <input
+                                type="text"
+                                class="builder-project-tech"
+                                placeholder="Python, FastAPI, HTML, CSS, JavaScript"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Link
+                            </label>
+
+                            <input
+                                type="text"
+                                class="builder-project-link"
+                                placeholder="GitHub / Live project URL"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Description
+                            </label>
+
+                            <textarea
+                                class="builder-project-description"
+                                rows="4"
+                                placeholder="Explain what you built and what your role was."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="add-item-button"
+                    onclick="addBuilderProject()"
+                >
+                    + Add Another Project
+                </button>
+
+
+                <div class="optional-note">
+                    Projects are optional. You can skip this step.
+                </div>
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="back-step-button"
+                        onclick="previousStep(4)"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="skip-button"
+                        onclick="skipStep(4)"
+                    >
+                        Skip
+                    </button>
+
+                    <button
+                        class="next-button"
+                        onclick="nextStep(4)"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STEP 5 EXPERIENCE
+        ======================================= -->
+
+        <section
+            class="builder-step"
+            id="step5"
+        >
+
+            <div class="step-card">
+
+                <div class="step-icon">
+                    💼
+                </div>
+
+                <h2>
+                    Experience
+                </h2>
+
+                <p class="step-description">
+                    Add internships, jobs, freelance work or other experience.
+                </p>
+
+
+                <div id="experienceBuilderContainer">
+
+
+                    <div class="experience-builder-item">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Job Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="builder-job-title"
+                                    placeholder="Software Developer Intern"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Company
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="builder-company"
+                                    placeholder="Company Name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Start Date
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="builder-experience-start"
+                                    placeholder="June 2026"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    End Date
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="builder-experience-end"
+                                    placeholder="August 2026"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Responsibilities / Achievements
+                            </label>
+
+                            <textarea
+                                class="builder-experience-description"
+                                rows="5"
+                                placeholder="Describe your responsibilities and achievements."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="add-item-button"
+                    onclick="addBuilderExperience()"
+                >
+                    + Add Another Experience
+                </button>
+
+
+                <div class="optional-note">
+                    No experience yet? That's completely fine.
+                    Click Skip.
+                </div>
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="back-step-button"
+                        onclick="previousStep(5)"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        class="skip-button"
+                        onclick="skipStep(5)"
+                    >
+                        Skip
+                    </button>
+
+                    <button
+                        class="next-button"
+                        onclick="nextStep(5)"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STEP 6 PREVIEW
+        ======================================= -->
+
+        <section
+            class="builder-step"
+            id="step6"
+        >
+
+            <div class="preview-step-card">
+
+                <div class="step-icon">
+                    📄
+                </div>
+
+                <h2>
+                    Your Resume Preview
+                </h2>
+
+                <p class="step-description">
+                    Review your resume before downloading it.
+                </p>
+
+
+                <div
+                    id="finalResumePreview"
+                    class="final-resume-paper"
+                >
+
+                    <div class="preview-empty">
+
+                        <div>
+                            📄
+                        </div>
+
+                        <h3>
+                            Resume Preview
+                        </h3>
+
+                        <p>
+                            Your completed resume will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="step-buttons">
+
+                    <button
+                        class="back-step-button"
+                        onclick="previousStep(6)"
+                    >
+                        ← Edit
+                    </button>
+
+                    <button
+                        class="download-button"
+                        onclick="downloadResume()"
+                    >
+                        Download Resume
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            AI Resume Assistant
+        </p>
+
+        <p>
+            Build smarter. Match better.
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script src="builder.js"></script>
+
+
+</body>
+
+</html>
