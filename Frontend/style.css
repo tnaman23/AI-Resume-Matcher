@@ -58,7 +58,7 @@ select:focus {
     min-height: 100vh;
     background: var(--paper);
     color: var(--ink);
-    overflow: hidden;
+    overflow: visible;
 }
 
 
